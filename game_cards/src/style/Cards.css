@@ -1,0 +1,226 @@
+.card {
+  width: 107px;
+  height: 150px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.cards {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.back-card {
+  background-image: url("/img/shirt_card.jpg");
+  background-size: cover;
+}
+.none-card {
+  background-color: #1C7430;
+}
+.king-crosses {
+  background-image: url('/img/сards/KC.png');
+  background-size: cover;
+}
+.ace-crosses {
+  background-image: url('/img/сards/AC.png');
+  background-size: cover;
+}
+.lady-crosses {
+  background-image: url('/img/сards/QC.png');
+  background-size: cover;
+}
+.jack-crosses {
+  background-image: url('/img/сards/JC.png');
+  background-size: cover;
+}
+.ten-crosses {
+  background-image: url('/img/сards/0C.png');
+  background-size: cover;
+}
+.nine-crosses {
+  background-image: url('/img/сards/9C.png');
+  background-size: cover;
+}
+.eight-crosses {
+  background-image: url('/img/сards/8C.png');
+  background-size: cover;
+}
+.seven-crosses {
+  background-image: url('/img/сards/7C.png');
+  background-size: cover;
+}
+.six-crosses {
+  background-image: url('/img/сards/6C.png');
+  background-size: cover;
+}
+.five-crosses {
+  background-image: url('/img/сards/5C.png');
+  background-size: cover;
+}
+.four-crosses {
+   background-image: url('/img/сards/4C.png');
+  background-size: cover;
+}
+.three-crosses {
+  background-image: url('/img/сards/3C.png');
+  background-size: cover;
+}
+.two-crosses {
+  background-image: url('/img/сards/2C.png');
+  background-size: cover;
+}
+.ace-spades {
+  background-image: url('/img/сards/AS.png');
+  background-size: cover;
+}
+.king-spades {
+  background-image: url('/img/сards/KS.png');
+  background-size: cover;
+}
+.lady-spades {
+  background-image: url('/img/сards/QS.png');
+  background-size: cover;
+}
+.jack-spades {
+  background-image: url('/img/сards/JS.png');
+  background-size: cover;
+}
+.ten-spades {
+  background-image: url('/img/сards/0S.png');
+  background-size: cover;
+}
+.nine-spades {
+   background-image: url('/img/сards/9S.png');
+  background-size: cover;
+}
+.eight-spades {
+  background-image: url('/img/сards/8S.png');
+  background-size: cover;
+}
+.seven-spades {
+  background-image: url('/img/сards/7S.png');
+  background-size: cover;
+}
+.six-spades {
+  background-image: url('/img/сards/6S.png');
+  background-size: cover;
+}
+.five-spades {
+  background-image: url('/img/сards/5S.png');
+  background-size: cover;
+}
+.four-spades {
+  background-image: url('/img/сards/4S.png');
+  background-size: cover;
+}
+.three-spades {
+  background-image: url('/img/сards/3S.png');
+  background-size: cover;
+}
+.two-spades {
+  background-image: url('/img/сards/2S.png');
+  background-size: cover;
+}
+.ace-diamonds {
+  background-image: url('/img/сards/AD.png');
+  background-size: cover;
+}
+.king-diamonds {
+  background-image: url('/img/сards/KD.png');
+  background-size: cover;
+}
+.lady-diamonds {
+  background-image: url('/img/сards/QD.png');
+  background-size: cover;
+}
+.jack-diamonds {
+  background-image: url('/img/сards/JD.png');
+  background-size: cover;
+}
+.ten-diamonds {
+  background-image: url('/img/сards/0D.png');
+  background-size: cover;
+}
+.nine-diamonds {
+  background-image: url('/img/сards/9D.png');
+  background-size: cover;
+}
+.eight-diamonds {
+  background-image: url('/img/сards/8D.png');
+  background-size: cover;
+}
+.seven-diamonds {
+  background-image: url('/img/сards/7D.png');
+  background-size: cover;
+}
+.six-diamonds {
+  background-image: url('/img/сards/6D.png');
+  background-size: cover;
+}
+.five-diamonds {
+  background-image: url('/img/сards/5D.png');
+  background-size: cover;
+}
+.four-diamonds {
+  background-image: url('/img/сards/4D.png');
+  background-size: cover;
+}
+.three-diamonds {
+  background-image: url('/img/сards/3D.png');
+  background-size: cover;
+}
+.two-diamonds {
+   background-image: url('/img/сards/2D.png');
+  background-size: cover;
+}
+.ace-hearts {
+  background-image: url('/img/сards/AH.png');
+  background-size: cover;
+}
+.king-hearts {
+  background-image: url('/img/сards/KH.png');
+  background-size: cover;
+}
+.lady-hearts {
+  background-image: url('/img/сards/QH.png');
+  background-size: cover;
+}
+.jack-hearts {
+  background-image: url('/img/сards/JH.png');
+  background-size: cover;
+}
+.ten-hearts {
+  background-image: url('/img/сards/0H.png');
+  background-size: cover;
+}
+.nine-hearts {
+  background-image: url('/img/сards/9H.png');
+  background-size: cover;
+}
+.eight-hearts {
+  background-image: url('/img/сards/8H.png');
+  background-size: cover;
+}
+.seven-hearts {
+  background-image: url('/img/сards/7H.png');
+  background-size: cover;
+}
+.six-hearts {
+   background-image: url('/img/сards/6H.png');
+  background-size: cover;
+}
+.five-hearts {
+  background-image: url('/img/сards/5H.png');
+  background-size: cover;
+}
+.four-hearts {
+  background-image: url('/img/сards/4H.png');
+  background-size: cover;
+}
+.three-hearts {
+  background-image: url('/img/сards/3H.png');
+  background-size: cover;
+}
+.two-hearts {
+  background-image: url('/img/сards/2H.png');
+  background-size: cover;
+}

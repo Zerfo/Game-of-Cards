@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600,700");
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #1C7430;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+}
+main {
+  height: 600px;
+}
+.container {
+  width: 740px;
+}
+.btnRefGame {
+  width: 102px;
+  height: 19px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.8;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: -0.25px;
+}
+.btnRefGame:active {
+  transform: translateX(0.4em);
+  transition: .5s;
+}
+.score {
+  opacity: 0.8;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  margin-right: 33px;
+}
