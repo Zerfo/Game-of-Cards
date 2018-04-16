@@ -3,6 +3,7 @@
   height: 150px;
   margin-right: 15px;
   margin-bottom: 15px;
+  border-radius: 5px;
 }
 .cards {
   margin-top: 50px;
