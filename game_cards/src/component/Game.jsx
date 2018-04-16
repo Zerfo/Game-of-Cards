@@ -267,8 +267,11 @@ export default class Game extends Component {
   };
 
   RefreshGame() {
+    for(let i = 0; i <= this.map.length; i++){ this.map[i].count = 0; }
     this.list = [];
+
     this.generateList();
+
     this.setState({
       score: 0,
       stateList: this.list
