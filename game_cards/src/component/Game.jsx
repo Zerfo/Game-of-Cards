@@ -4,17 +4,6 @@ import '../style/Game.css';
 import '../style/Cards.css';
 
 export default class Game extends Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      score: 0,
-      stateList: this.list
-    };
-
-    this.generateList();
-  }
-
   map = [
     {
       style: "ace-crosses",
@@ -226,6 +215,18 @@ export default class Game extends Component {
     }
   ];
   list = [];
+  countDownCards = 0;
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      score: 0,
+      stateList: this.list
+    };
+
+    this.generateList();
+  }
 
   generateList() {
     let i = 0;
@@ -253,18 +254,32 @@ export default class Game extends Component {
     this.list.shuffle(true);
   }
 
-  ReverseCard(item, itemID, e) {
-    console.log("item", itemID);
-    const updateList = this.state.stateList.map(it => {
-      if (it.id === item.id) {
-        return {...it, isPressed: !item.isPressed};
-      } else return it;
-    });
-    console.log("updateList", updateList);
-    this.setState({
-      stateList: updateList
-    });
+  ReverseCard(item, e) {
+    for(let key in this.list){
+      if(this.list[key].isPressed !== false) this.countDownCards += 1;
+    }
+
+    if(this.countDownCards <= 2) {
+      const updateList = this.state.stateList.map(it => {
+        if (it.id === item.id) {
+          return {...it, isPressed: !item.isPressed};
+        } else return it;
+      });
+      this.setState({
+        stateList: updateList
+      });
+      this.countingScore(updateList, item);
+    }
   };
+
+  countingScore(updateList, item, e) {
+    if(this.countDownCards === 2){
+      for(let key in this.list){
+        if(item.style === updateList[key].style) console.log("wzdgasga");
+        break;
+      }
+    }
+  }
 
   RefreshGame() {
     for(let i = 0; i < this.map.length; i++){ this.map[i].count = 0; }
@@ -279,9 +294,7 @@ export default class Game extends Component {
   }
 
   render() {
-    console.log(this.list);
     return (
-
       <div className="game">
         <header>
           <div className="refresh">
@@ -292,7 +305,8 @@ export default class Game extends Component {
           </div>
         </header>
         <div className="cards">
-          {this.state.stateList.map(item => {
+          {
+            this.state.stateList.map(item => {
               let boundItemClick = this.ReverseCard.bind(this, item, item.id);
               return <div key={item.id}
                           className={`card ${item.isPressed ? item.style : 'back-card'}`}
