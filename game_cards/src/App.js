@@ -24,7 +24,6 @@ class App extends Component {
         <div className="content">
           <Game />
         </div>
-
         :
         <div className="startWindow">
           <img src="/img/StartGame.png" alt=""/>

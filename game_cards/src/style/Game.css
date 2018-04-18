@@ -44,3 +44,49 @@ main {
   letter-spacing: 0;
   margin-right: 33px;
 }
+.endGame {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.bottomWindow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.your-score, .win {
+  text-align: center;
+  width: 100%;
+  opacity: 0.85;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: #FFFFFF;
+}
+.win{
+  font-size: 28px;
+}
+.btnRefGameToNewGame{
+  width: 128px;
+  height: 42px;
+  opacity: 0.85;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  background: #FFFFFF;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1C7430;
+  letter-spacing: 0;
+  margin-top: 40px;
+  cursor: pointer;
+  line-height: 45px;
+  position: relative;
+}
+.endGame {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}

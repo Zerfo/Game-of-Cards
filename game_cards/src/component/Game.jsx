@@ -217,7 +217,8 @@ export default class Game extends Component {
   list = [];
   countDownCards = 0;
   countUpCards = 0;
-  newScore = 0
+  newScore = 0;
+  endGame = false;
 
   constructor(props) {
     super(props);
@@ -285,34 +286,23 @@ export default class Game extends Component {
     if (this.countDownCards === 2) {
       for (let key = 0; key < updateList.length; key++) {
         if(item.id === updateList[key].id) numID1 = key;
-        // console.log("item.id:",item.id);
-        // console.log("item.isPressed:", item.isPressed);
-        // console.log("item.style:",item.style);
-        // console.log("updateList[key].id:",updateList[key].id);
-        // console.log("updateList[key].isPressed:",updateList[key].isPressed);
-        // console.log("updateList[key].style:",updateList[key].style);
+
         if (item.id != updateList[key].id && item.isPressed == true && updateList[key].isPressed == true && item.style == updateList[key].style) {
           this.newScore = score + this.countUpCards * 42;
           numID2 = key;
-
-          //console.log(this.newScore);
         }
         if(item.id != updateList[key].id && item.isPressed == true && updateList[key].isPressed == true && item.style != updateList[key].style) {
           this.newScore = score - this.countUpCards * 42;
           if (this.newScore < 0) this.newScore = 0;
           console.log(this.newScore);
         }
-
-        //console.log("------------------------------------------------------------------------------------------");
       }
+
       setTimeout(() => {
         if(score < this.newScore){
           updateList[numID1].style = "none";
           updateList[numID2].style = "none";
         }
-      },1000);
-
-      setTimeout(() => {
         for (let i in updateList) {
           if (updateList[i].isPressed !== false)
             updateList[i].isPressed = false;
@@ -322,7 +312,9 @@ export default class Game extends Component {
           stateList: updateList
         });
       }, 1500);
+
       this.countDownCards = 0;
+      this.EndGame(updateList);
     }
   }
 
@@ -338,10 +330,30 @@ export default class Game extends Component {
     });
     this.countDownCards = 0;
     this.countUpCards = 0;
+    this.endGame = false;
+  }
+
+  EndGame(updateList){
+    let count = 0;
+    for(let key in updateList){
+      if(updateList[key].style == 'none')
+        count += 1;
+    }
+    if(count == updateList.length)
+      this.endGame = true;
   }
 
   render() {
-    return (
+    return ( this.endGame ?
+      <div className="endGame">
+        <img src="/img/Group_2.png" alt=""/>
+        <div className="bottomWindow">
+          <div className="win">Поздравляем!</div>
+          <div className="your-score">Ваш итоговый счет:&nbsp;&nbsp;{this.state.score}</div>
+          <a className="btnNewGame" onClick={() => this.RefreshGame()}>Еще раз</a>
+        </div>
+      </div>
+        :
       <div className="game">
         <header>
           <div className="refresh">
@@ -354,11 +366,11 @@ export default class Game extends Component {
         <div className="cards">
           {
             this.state.stateList.map(item => {
-              let boundItemClick = this.ReverseCard.bind(this, item, item.id);
-              return <div key={item.id}
-                          className={`card ${item.isPressed ? item.style : item.style !== 'none' ? 'back-card': 'none'}`}
-                          onClick={boundItemClick}>
-              </div>
+                let boundItemClick = this.ReverseCard.bind(this, item, item.id);
+                return <div key={item.id}
+                            className={`card ${item.isPressed ? item.style : item.style !== 'none' ? 'back-card': 'none'}`}
+                            onClick={boundItemClick}>
+                </div>
             }
           )}
         </div>
