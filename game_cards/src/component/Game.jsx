@@ -216,6 +216,7 @@ export default class Game extends Component {
   ];
   list = [];
   countDownCards = 0;
+  countUpCards = 0;
 
   constructor(props) {
     super(props);
@@ -257,6 +258,7 @@ export default class Game extends Component {
   ReverseCard(item, e) {
     for(let key in this.list){
       if(this.list[key].isPressed !== false) this.countDownCards += 1;
+      else this.countUpCards += 1;
     }
 
     if(this.countDownCards <= 2) {
@@ -275,7 +277,16 @@ export default class Game extends Component {
   countingScore(updateList, item, e) {
     if(this.countDownCards === 2){
       for(let key in this.list){
-        if(item.style === updateList[key].style) console.log("wzdgasga");
+        if(item.style === updateList[key].style) {
+          let score = this.state.score;
+          let newScore = score + this.countDownCards * 42;
+          this.setState({ score: newScore });
+        } else {
+          let score = this.state.score;
+          let newScore = score - this.countDownCards * 42;
+          if(newScore < 0) this.setState({ score: 0 });
+            else this.setState({ score: newScore });
+        }
         break;
       }
     }
@@ -291,6 +302,8 @@ export default class Game extends Component {
       score: 0,
       stateList: this.list
     });
+    this.countDownCards = 0;
+    this.countUpCards = 0;
   }
 
   render() {
